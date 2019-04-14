@@ -1,6 +1,5 @@
 package com.cargo.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,14 +12,10 @@ public class Item {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "itemNo")
 	private int itemNo;
-	@Column(name = "itemName")
 	private String itemName;
-	@Column(name = "itemCategory")
 	private String itemCategory;
 	private int weight;
-	@Column(name = "consignmentNo")
 	private int consignmentNo;
 
 	public int getItemNo() {

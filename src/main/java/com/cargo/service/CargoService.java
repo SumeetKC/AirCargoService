@@ -22,7 +22,7 @@ public class CargoService {
 	private CustomerDAO customerDAO;
 	private ConsignmentDAO consignmentDAO;
 
-	@PostMapping(value = "/register", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value = "/register")
 	public Customer registerCustomer(Customer customer) {
 		return customerDAO.registerCustomer(customer);
 	}

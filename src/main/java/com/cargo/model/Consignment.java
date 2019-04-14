@@ -3,7 +3,6 @@ package com.cargo.model;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,19 +16,13 @@ public class Consignment {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "consignmentNo")
 	private int consignmentNo;
-	@Column(name = "shipmentAddress")
 	private String shipmentAddress;
-	@Column(name = "serviceType")
 	private String serviceType;
-	@Column(name = "dateofshipment")
 	private Date dateofshipment;
-	@Column(name = "totalCost")
 	private double cost;
 	private String source;
 	private String destination;
-	@Column(name = "accountNo")
 	private int accountNo;
 	@Transient
 	private List<Item> itemList;

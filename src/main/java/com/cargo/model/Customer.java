@@ -2,7 +2,6 @@ package com.cargo.model;
 
 import java.util.List;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,13 +15,9 @@ public class Customer {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "accountNo")
 	private int accountNo;
-	@Column(name = "customerName")
 	private String customerName;
-	@Column(name = "mobileNo")
 	private long mobileNo;
-	@Column(name = "emailId")
 	private String emailId;
 	private String address;
 	private String password;
