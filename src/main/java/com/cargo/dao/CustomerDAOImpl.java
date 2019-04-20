@@ -1,7 +1,5 @@
 package com.cargo.dao;
 
-import javax.transaction.Transactional;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +9,7 @@ import com.cargo.exception.InvalidCredentialException;
 import com.cargo.model.Customer;
 
 @Repository
-@Transactional
-public class CustomerDAOImpl implements CustomerDAO {
+public class CustomerDAOImpl implements CustomerDAO{
 
 	@Autowired
 	private SessionFactory sessionFactory;

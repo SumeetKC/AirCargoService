@@ -4,7 +4,6 @@ import java.util.Properties;
 
 import javax.sql.DataSource;
 
-import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -13,9 +12,11 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @PropertySource(value = "classpath:application.properties")
 @Configuration
+@EnableTransactionManagement
 public class HibernateUtilConfig {
 
 	@Value("${spring.datasource.driver-class-name}")
@@ -56,10 +57,10 @@ public class HibernateUtilConfig {
 	
 	@Bean
 	@Autowired
-	public HibernateTransactionManager hibernateTransactionManager(SessionFactory factory)
+	public HibernateTransactionManager hibernateTransactionManager()
 	{
 		HibernateTransactionManager hibernateTransactionManager = new HibernateTransactionManager();
-		hibernateTransactionManager.setSessionFactory(factory);
+		hibernateTransactionManager.setSessionFactory(sessionFactory().getObject());
 		return hibernateTransactionManager;
 	}
 }
